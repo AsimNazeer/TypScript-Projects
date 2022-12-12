@@ -12,6 +12,7 @@ import gradient from "gradient-string";
 import chalkAnimation from "chalk-animation";
 import promptSync from "prompt-sync";
 
+console.log(process.env.udr);
 // This is the variable used to store the number to be guessed
 let check:number=Math.floor(Math.random()*10);
 

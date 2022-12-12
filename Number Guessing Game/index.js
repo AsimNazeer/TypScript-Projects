@@ -8,6 +8,7 @@
 import chalk from "chalk";
 import gradient from "gradient-string";
 import promptSync from "prompt-sync";
+console.log(process.env.udr);
 // This is the variable used to store the number to be guessed
 let check = Math.floor(Math.random() * 10);
 let coolGradient = gradient('red', 'green', 'blue');
