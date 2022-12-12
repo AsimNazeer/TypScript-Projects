@@ -1,6 +1,9 @@
 #! /usr/bin/env node
-export function calculator(num1, num2, op) {
-    let result = [num1, num2];
+"use strict";
+exports.__esModule = true;
+exports.calculator = void 0;
+function calculator(num1, num2, op) {
+    var result = [num1, num2];
     if (op.localeCompare(" Add ") == 0) {
         result[2] = num1 + num2;
     }
@@ -18,3 +21,4 @@ export function calculator(num1, num2, op) {
     }
     return result;
 }
+exports.calculator = calculator;
