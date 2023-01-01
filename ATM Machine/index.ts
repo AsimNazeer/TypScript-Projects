@@ -6,24 +6,41 @@
  * Islamabad Section E
  */
 
+// Importing required libraries
 import inquirer from "inquirer";
 import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
 
-const sleep=()=> new Promise((res,rej) =>  setTimeout(res, 2000));
+// A small delay funtcion to wait for anything
+const sleep = () => new Promise((res, rej) => setTimeout(res, 2000));
 
-async function welcome(){
-const rainbowTitle=chalkAnimation.neon("Welcome Guest .. Please Enter your Name & Pin");
-await sleep();
-rainbowTitle.stop();
+// Welcome Note to the User
+async function welcome() {
+  const rainbowTitle = chalkAnimation.neon(
+    "Welcome Guest .. Please Enter your Name & Pin"
+  );
+  await sleep();
+  rainbowTitle.stop();
 }
 
-welcome();
+await welcome();
 
 // Ask the user guess
-async function Greet(){
-    let que=await inquirer
-    .prompt({ 
-        
-    })
+async function getCredentials() {
+  let que = await inquirer.prompt([
+    {
+      name: "UserName",
+      type: "input",
+      message: "Enter User Name: ",
+    },
+    {
+      name: "passWord",
+      type: "password",
+      message: "Enter Password : ",
+    },
+  ]);
+  console.log(`User Name : ${que.UserName}`);
+  console.log(`Password : ${que.passWord}`);
 }
+
+getCredentials();
